@@ -11,8 +11,20 @@ function App() {
   const addvalue = () =>{
     // console.log('clicked', counter);
     if (counter < 20) {
-    counter = counter + 1
-    setCounter(counter)
+    // counter = counter + 1
+    setCounter(counter + 1)
+    /*
+    setCounter() also give callback
+    setCounter(counter + 1)
+    setCounter(counter + 1)
+    setCounter(counter + 1)
+    setCounter(counter + 1)
+    so what happened? counter value is remain increment by 1 here concept of React fibre which send request in batch but if we use callback like this
+    setCounter((prevCounter => counter + 1))
+    setCounter((prevCounter => counter + 1))
+    setCounter((prevCounter => counter + 1))
+    then it increase by 4 so result is 1->5->9-> and so on.
+    */
   }
   }
 
